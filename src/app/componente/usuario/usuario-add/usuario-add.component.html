@@ -94,6 +94,8 @@
           class="form-control"
           id="data"
           name="data"
+          [minDate]="{year: 1950, month: 1, day: 1}"
+          [maxDate]="{year: 2007, month: 1, day: 1}"
           [(ngModel)]="usuario.dataNascimento"
           ngbDatepicker
           required

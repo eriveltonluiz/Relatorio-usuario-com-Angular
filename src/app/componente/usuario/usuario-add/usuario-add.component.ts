@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Profissao } from 'src/app/model/profissao';
 import { Telefone } from 'src/app/model/telefone';
+import { TelefoneDTO } from 'src/app/model/telefone-dto';
 import { Usuario } from 'src/app/model/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -125,12 +126,17 @@ export class UsuarioAddComponent implements OnInit {
     if (this.usuario.telefones === undefined) {
       this.usuario.telefones = new Array<Telefone>();
     }
-    this.usuarioService.addTelefone(this.telefone).subscribe(data => {
+
+    let telefoneDTO = new TelefoneDTO();
+    telefoneDTO.numero = this.telefone.numero
+    telefoneDTO.usuario_id = this.usuario.id
+    console.log(telefoneDTO)
+    this.usuarioService.addTelefone(telefoneDTO).subscribe(data => {
       this.telefone = data
     })
-    this.usuario.telefones.push(this.telefone)
 
     alert(`Telefone ${this.telefone.numero} foi salvo com sucesso!!`)
+    this.usuario.telefones.push(this.telefone)
     this.telefone = new Telefone()
   }
 

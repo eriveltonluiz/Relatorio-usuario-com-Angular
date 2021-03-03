@@ -1,6 +1,6 @@
 <form>
   <div class="form-group">
-    <h3>Projeto Angular 11 - Login</h3>
+    <h3>Projeto Angular 9 - Login</h3>
   </div>
 
   <!-- #email faz referência ao campo login que será manipulado as mensagens -->
@@ -40,6 +40,8 @@
 
   <button [disabled]="loginUser.invalid || senha.invalid" (click)="login()"class="btn btn-primary">Acessar</button>
 
-  <button [disabled]="loginUser.invalid" style="margin-left: 10px;" (click)="recuperar()"class="btn btn-primary">Recuperar Acesso</button>
+  <button title="Insira o email no campo para ser enviado uma nova senha" [disabled]="loginUser.invalid" style="margin-left: 10px;" (click)="recuperar()" class="btn btn-primary">Recuperar Acesso</button>
+
+  <button title="Insira o email no campo para ser cadastrado no sistema e enviado uma nova senha" [disabled]="loginUser.invalid" style="margin-left: 10px;" (click)="liberarAcesso()" class="btn btn-primary">1º Acesso</button>
 </form>
 >

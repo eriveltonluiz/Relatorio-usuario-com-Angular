@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppConstants } from '../app-constants';
+import { Telefone } from '../model/telefone';
+import { TelefoneDTO } from '../model/telefone-dto';
+import { Usuario } from '../model/usuario';
 import { UsuarioReport } from '../model/usuario-report';
 
 @Injectable({
@@ -49,8 +52,8 @@ export class UsuarioService {
     else return false
   }
 
-  addTelefone(telefone): Observable<any>{
-    return this.http.post(`${AppConstants.baseUrl}addFone`, telefone)
+  addTelefone(telefoneDTO: TelefoneDTO): Observable<any>{
+    return this.http.post(`${AppConstants.baseUrl}addFone`, telefoneDTO)
   }
   
   deletarTelefone(id: Number): Observable<any>{
