@@ -53,7 +53,7 @@ export class UsuarioService {
   }
 
   addTelefone(telefoneDTO: TelefoneDTO): Observable<any>{
-    return this.http.post(`${AppConstants.baseUrl}addFone`, telefoneDTO)
+    return this.http.post<any>(`${AppConstants.baseUrl}addFone`, telefoneDTO)
   }
   
   deletarTelefone(id: Number): Observable<any>{

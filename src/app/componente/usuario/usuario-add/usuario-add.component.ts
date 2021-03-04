@@ -130,14 +130,13 @@ export class UsuarioAddComponent implements OnInit {
     let telefoneDTO = new TelefoneDTO();
     telefoneDTO.numero = this.telefone.numero
     telefoneDTO.usuario_id = this.usuario.id
-    console.log(telefoneDTO)
+    
     this.usuarioService.addTelefone(telefoneDTO).subscribe(data => {
       this.telefone = data
+      this.usuario.telefones.push(this.telefone)
+      this.telefone = new Telefone()
     })
-
     alert(`Telefone ${this.telefone.numero} foi salvo com sucesso!!`)
-    this.usuario.telefones.push(this.telefone)
-    this.telefone = new Telefone()
   }
 
   deletarTelefone(id: Number, index: any) {

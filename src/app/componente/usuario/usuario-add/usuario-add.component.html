@@ -95,8 +95,8 @@
           id="data"
           name="data"
           [minDate]="{year: 1950, month: 1, day: 1}"
-          [maxDate]="{year: 2007, month: 1, day: 1}"
-          [(ngModel)]="usuario.dataNascimento"
+          [maxDate]="{year: 2007, month: 12, day: 31}"
+          [(ngModel)]="usuario.dataNascimento" 
           ngbDatepicker
           required
           placeholder="dd/mm/yyyy"
@@ -167,9 +167,11 @@
   </section>
 
   <table class="table">
+    <thead class="thread-dark">
+      <th scope="col">Número</th>
+    </thead>
     <tbody>
       <tr *ngFor="let fone of usuario.telefones; let i = index">
-        <td>{{ fone.id }}</td>
         <td>{{ fone.numero | mask: "(00) 0 0000-0000" }}</td>
         <td>
           <button
