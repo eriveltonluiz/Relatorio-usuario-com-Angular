@@ -3,16 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { AppConstants } from '../app-constants';
 import { Usuario } from '../model/usuario';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginServiceService {
 
+  private baseUrl = environment.baseUrl
   constructor(private http: HttpClient, private router: Router) { }
 
   login(usuario: any){
-    return this.http.post(AppConstants.baseLogin, JSON.stringify(usuario)).subscribe(data => {
+    return this.http.post(this.baseUrl + 'login', JSON.stringify(usuario)).subscribe(data => {
       let token = JSON.parse(JSON.stringify(data)).Authorization.split(' ')[1]
 
       localStorage.setItem("token", token)
@@ -28,7 +30,7 @@ export class LoginServiceService {
     
     let usuario = new Usuario();
     usuario.login = login;
-    return this.http.post(AppConstants.baseUrlPath + 'recuperar/', usuario).subscribe(data => {
+    return this.http.post(this.baseUrl + 'recuperar/', usuario).subscribe(data => {
       alert(JSON.parse(JSON.stringify(data)).error)
     },
     error => {
@@ -40,7 +42,7 @@ export class LoginServiceService {
     
     let usuario = new Usuario();
     usuario.login = login;
-    return this.http.post(AppConstants.baseUrlPath + 'recuperar/liberarAcesso', usuario).subscribe(data => {
+    return this.http.post(this.baseUrl + 'recuperar/liberarAcesso', usuario).subscribe(data => {
       alert(JSON.parse(JSON.stringify(data)).error)
     },
     error => {
