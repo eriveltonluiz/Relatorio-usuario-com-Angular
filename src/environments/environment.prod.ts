@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://api-relatorio-usuario.herokuapp.com/projetospringrestapi/projetospringrestapi'
+  api: 'https://api-relatorio-usuario.herokuapp.com/projetospringrestapi',
+  redirectUrl: 'https://api-relatorio-usuario.herokuapp.com/projetospringrestapi/login'
 };
