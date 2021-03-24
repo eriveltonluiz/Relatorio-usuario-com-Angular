@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ProjetoAngularSpringREST
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# Relatorio-usuario-com-Angular
+Aplicação desenvolvida com Angular 9 e Spring REST do seguinte repositório: https://github.com/eriveltonluiz/API-Spring-Relatorio
+>>>>>>> ab4c40ceb937b160fb8e3ddf408bef9657dc3a61
