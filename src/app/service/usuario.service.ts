@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment.prod';
+//import { environment } from '../../environments/environment.prod';  //Executa no heroku web
+import { environment } from '../../environments/environment';    //Executa localmente
 import { AppConstants } from '../app-constants';
 import { Telefone } from '../model/telefone';
 import { TelefoneDTO } from '../model/telefone-dto';

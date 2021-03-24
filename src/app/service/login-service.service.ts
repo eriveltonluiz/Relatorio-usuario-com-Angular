@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { AppConstants } from '../app-constants';
 import { Usuario } from '../model/usuario';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+//import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
